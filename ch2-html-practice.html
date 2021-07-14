@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang='ko'>
+
+<head>
+  <meta charset="UTF-8">
+  <title>고양이의 일상</title>
+  <meta name='description' content='고양이가 좋아하는 것과 일상을 소개'>
+  <style>
+    table {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+
+
+<body>
+  <!-- HTML 실습: Ch2 실습-->
+  <h1>고양이의 하루</h1>
+  <p>계속 잠을 잡니다</p>
+
+  <a href='index.html'>Home<img src="images/menu1.jpg" alt='menu1 image'></a>
+  <a href='https://google.co.kr' target="_blank">Google</a>
+  <!-- _self.   target 속성 지정안하면 ctrl+좌클릭으로 사용자가 현재탭/다른탭 열지 선택 가능 -->
+  <a href="mailto:info@daum.net">문의</a>
+  <ol>
+    <li>list 1</li>
+    <li>list 2</li>
+  </ol>
+
+  <!-- 기본 표 -->
+  <table>
+    <tr>
+      <th>플랜 이름</th>
+      <th>요금</th>
+    </tr>
+    <tr>
+      <td>두근두근 플랜</td>
+      <td>월정액 29,000원</td>
+    </tr>
+    <tr>
+      <td>콩닥콩닥 플랜</td>
+      <td>월정액 19,000원</td>
+    </tr>
+  </table>
+  <br>
+
+  <!-- 수평 병합 예 : colspan='2' 사용-->
+  <table>
+    <tr>
+      <th colspan='2'>병합셀 = 수평 병합</th>
+    </tr>
+    <tr>
+      <td>두근두근 플랜</td>
+      <td>월정액 29,000원</td>
+    </tr>
+    <tr>
+      <td>콩닥콩닥 플랜</td>
+      <td>월정액 19,000원</td>
+    </tr>
+  </table>
+  <br>
+
+  <!-- 수직 정렬 :  rowspan="2" -->
+  <table>
+    <tr>
+      <th>플랜 이름</th>
+      <th>요금</th>
+    </tr>
+    <tr>
+      <td rowspan="2">행 병합=수직 병합</td>
+      <td>월정액 29,000원</td>
+    </tr>
+    <tr>
+
+      <td>월정액 19,000원</td>
+    </tr>
+  </table>
+
+</body>
+
+</html>
