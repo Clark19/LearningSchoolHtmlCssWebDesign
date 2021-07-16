@@ -6,6 +6,12 @@
   <title>고양이의 일상</title>
   <meta name='description' content='고양이가 좋아하는 것과 일상을 소개'>
   <style>
+    h1, h2 { text-align: center; }
+    nav { background: rgba(60, 114, 138, 0.562); max-width: 900px;
+      margin: 0 auto; display: flex; justify-content: center; }
+    ul { display: flex;  }
+    ul li { margin: 0 10px; padding: 0 10px; list-style: none; 
+      font-size: 30px;}
     table {
       border: 1px solid black;
       border-collapse: collapse;
@@ -15,15 +21,29 @@
     td {
       border: 1px solid #000;
     }
+
+    article { background: rgb(85, 127, 182);
+      max-width: 700px; margin: 0 auto; } /* horizontal center of layout tag */ 
+    section { background: rgb(28, 110, 69);
+      max-width: 700px; margin: 0 auto; }
   </style>
 </head>
 
 
 <body>
-  <!-- HTML 실습: Ch2 실습-->
-  <h1>고양이의 하루</h1>
-  <p>계속 잠을 잡니다</p>
-
+  <!-- HTML 실습: Ch2 실습 + CSS 자유 적용 -->
+  <header>
+    <h1>러닝스쿨! 한 권으로 끝내는 HTML+CSS 웹 디자인 입문</h1>
+    <h2>HTML 실습: Ch2 실습 + CSS 자유 적용</h2>
+    <nav><ul>
+      <li><a href="#">Top</a></li>
+      <li><a href="#">Table</a></li>
+      <li><a href="#">Sematic Tag</a></li>
+    </ul></nav>
+  </header>
+  
+<!-- 페이지의 메인 컨텐츠 부분 main 태그 -->
+<main>
   <a href='index.html'>Home<img src="images/menu1.jpg" alt='menu1 image'></a>
   <a href='https://google.co.kr' target="_blank">Google</a>
   <!-- _self.   target 속성 지정안하면 ctrl+좌클릭으로 사용자가 현재탭/다른탭 열지 선택 가능 -->
@@ -82,6 +102,60 @@
     </tr>
   </table>
 
-</body>
+  <input type='submit' name='submitBtn' value='send!'>
+  <!-- image button -->
+  <input type="image" src="images/favicon.png" alt="send Button">
+
+  <!-- 선택 상자 -->
+  <select name='bloodtype' multiple>
+    <option value='A'>A</option>
+    <option value="B">B</option>
+    <option value='O'>O</option>
+    <option value='AB'>AB</option>
+    <option value="모름" selected>모름</option>
+  </select>
+  
+  <textarea name="message" id="" cols="30" rows="10" placeholder="Input Text"></textarea>
+  
+  <input type='checkbox' name='travel' value='국내' id='korea'>
+  <label for='korea'>국내</label>
+  <input type="checkbox" name="travel" id="europe" value='유럽'>
+  <label for="europe">유럽</label>
+  <input type="checkbox" name="travel" id="asia" value='동남아시아'>
+  <label for="asia">동남아시아</label>
+
+  <article>
+    <h2>내일의 날씨</h2>
+    <p>내일은 흐린 뒤 맑을 예정</p>
+  </article>
+  <section>
+    <h2>추천 스타일</h2>
+    <p>따뜻하지만 일교차가 있으므로 걸쳐 입을 옷을 함께 준비해주세요</p>
+  </section>
+  
+  </main>
+
+  <!-- 메인 컨텐츠가 아닌 추가 정보 aside 태그 사용
+       메인 컨텐츠와 관계성이 낮은 정보 사용 -->
+  <aside>
+    <section>광고(사이드바 영역)</section>
+  </aside>
+
+  <!-- 단순한 디자인 목적의 그룹이나 어떤 용도에도 속하지 않는 블락 그룹용 태그 div 사용 -->
+  <div>
+    <img src='images/favicon.png' alt='이미지'>
+    <p>의미없는 이미지</p>
+  </div>
+
+  <footer>
+    <ul>
+      <li><a href="#">Facebook</a></li>
+      <li><a href="#">Twitter</a></li>
+    </ul>
+    <p>Copyright 2019 Mana</p>
+  </footer>
+
+  
+
 
 </html>
