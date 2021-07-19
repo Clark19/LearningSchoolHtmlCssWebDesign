@@ -5,40 +5,73 @@
   <meta charset="UTF-8">
   <title>고양이의 일상</title>
   <meta name='description' content='고양이가 좋아하는 것과 일상을 소개'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/cssBasic.css">
+
   <style>
-    h1, h2 { text-align: center; }
+    :root { box-sizing: border-box;}
+    /* body { background: lavender;
+      background: url(images/bg-airplane.jpg) no-repeat;
+      background-size: cover; background-position: top center;} */
+    body { background: lavender url(images/contact-bg.jpg) no-repeat center top/cover;}
+    /* background-size는 background-position 바로 뒤에 /(슬래시)를 붙이고 넣어야 함ㄹ */
+    h1 { color: #0bd; background: #ffe;}
+    p { font-size: 20px; line-height: 1.7; text-align: justify; }
+    
+    h1, h2 { text-align: center; font-family: 'Nanum Brush', cursive;}
     nav { background: rgba(60, 114, 138, 0.562); max-width: 900px;
       margin: 0 auto; display: flex; justify-content: center; }
     ul { display: flex;  }
-    ul li { margin: 0 10px; padding: 0 10px; list-style: none; 
-      font-size: 30px;}
+    ul li { margin: 0 20px; list-style: circle inside;
+      list-style-image: url(images/star.png);
+      font-size: 30px; }
     table {
-      border: 1px solid black;
+      border: 4px;
+      border-color: tan #0bd tomato rgba(60, 114, 138, 0.562);
+      border-style: double ridge inset outset;
       border-collapse: collapse;
     }
 
     th,
     td {
-      border: 1px solid #000;
+      border: 3px groove #000;
     }
 
     article { background: rgb(85, 127, 182);
       max-width: 700px; margin: 0 auto; } /* horizontal center of layout tag */ 
     section { background: rgb(28, 110, 69);
       max-width: 700px; margin: 0 auto; }
+
+    .liststyle { display: flex; }
+    .list-number-out { display: flex; flex-direction: column;
+      justify-content: center; margin-right: 10px; }
+    .list-number-in { width: 60px; height:60px;
+      border: 1px solid #0bd; border-radius: 50%;
+      text-align: center; color:#0bd;
+      line-height: 60px; }
+    /* .list-number { display: flex;
+      justify-content: center; margin-right: 10px;
+      width: 100px; height:60px;
+      border: 1px solid #0bd; border-radius: 50%; color:#0bd;
+      text-align: center; align-items: center;
+      } */
+    
   </style>
+
 </head>
 
 
 <body>
   <!-- HTML 실습: Ch2 실습 + CSS 자유 적용 -->
-  <header>
+  <header id='top'>
     <h1>러닝스쿨! 한 권으로 끝내는 HTML+CSS 웹 디자인 입문</h1>
     <h2>HTML 실습: Ch2 실습 + CSS 자유 적용</h2>
     <nav><ul>
-      <li><a href="#">Top</a></li>
-      <li><a href="#">Table</a></li>
-      <li><a href="#">Sematic Tag</a></li>
+      <li><a href="#top">Top</a></li>
+      <li><a href="#table">Table</a></li>
+      <li><a href="#semantic">Sematic Tag</a></li>
     </ul></nav>
   </header>
   
@@ -53,8 +86,17 @@
     <li>list 2</li>
   </ol>
 
+  <div class="liststyle">
+    <div class='list-number-out'><div class='list-number-in'>1</div></div>
+    <!-- <div class='list-number'>1</div> -->
+    <div>
+      <h3>We're great people</h3>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam possimus rem tenetur aspernatur esse sapiente, similique dignissimos enim consequuntur placeat eos, libero eius. Est corporis sunt, sit odio nisi asperiores?</p>
+    </div>
+  </div>
+
   <!-- 기본 표 -->
-  <table>
+  <table id='table'>
     <tr>
       <th>플랜 이름</th>
       <th>요금</th>
@@ -124,7 +166,7 @@
   <input type="checkbox" name="travel" id="asia" value='동남아시아'>
   <label for="asia">동남아시아</label>
 
-  <article>
+  <article id='semantic'>
     <h2>내일의 날씨</h2>
     <p>내일은 흐린 뒤 맑을 예정</p>
   </article>
