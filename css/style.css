@@ -1,3 +1,4 @@
+/* 동영상 실습 코드의 스타일시트 */
 @charset "UTF-8";
 @import "variables.css";
 
@@ -11,7 +12,9 @@ img { max-width: 100%; }
 html { font-size: 1.7; }
 body { font-family: "나눔고딕", NanumGothic, "맑은고딕", MalgunGothic, sans-serif;
   line-height: 1.7; color: var(--color-text); }
-#home { 
+
+/* 풀 스크린 이미지 배결 설정 하는 부분 [[ */
+#home {
 		background: url(../images/main-bg.jpg);
 		min-height: 100vh;
 }
@@ -19,7 +22,7 @@ body { font-family: "나눔고딕", NanumGothic, "맑은고딕", MalgunGothic, s
 	background-size: cover;
 	background-position: center top;
 	background-repeat: no-repeat;
-}
+} /* ]] */
 
 /** Header **/
 .page-header { display: flex; justify-content:space-between;}
@@ -53,7 +56,7 @@ body { font-family: "나눔고딕", NanumGothic, "맑은고딕", MalgunGothic, s
 	border-radius: 5px;
 	padding: 18px 32px;
 }
-.button:hover { background: var(--color-button-hover); }
+.button:hover { background: var(--color-btn-hover); }
 
 /* 테스트용 */
 /* .topMenu {

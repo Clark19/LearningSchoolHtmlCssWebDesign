@@ -1,5 +1,7 @@
 :root {
   --color-text: #432;
   --color--link-hover: #0bc;
-  --color-button-hover: #0090aa;
+  --color-btn-text-color: #fff;
+  --color-btn-hover: #0090aa;
+  --color-btn-bg: #0bd;
 }
