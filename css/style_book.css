@@ -20,7 +20,7 @@ body { font-family: "나눔고딕", NanumGothic, "맑은고딕", MalgunGothic, s
 		background-blend-mode: luminosity;
 }
 #home.big-bg {
-	background-size: cover; /* 이미지의 가로세로 비율을 유지한 상태로 화면을 꽉 채울때는 cover 값 사용 */
+	background-size: cover; /* ! 이미지의 가로세로 비율을 유지한 상태로 화면을 꽉 채울때는 background-size: cover 값 사용 */
 	background-position: center top;
 	background-repeat: no-repeat;
 } /* ]] */
@@ -81,8 +81,52 @@ body { font-family: "나눔고딕", NanumGothic, "맑은고딕", MalgunGothic, s
 
 	/* 사이드바 */
 	aside { width: 22%; }
+	.sub-title { font-size: 1.375rem; padding: 0 8px 8px;
+		border-bottom: 2px var(--color-btn-bg) solid; font-weight: normal;}
+	.sub-menu { margin-bottom: 60px; list-style: none; }
+	.sub-menu li { border-bottom: 1px #ddd solid; }
+	/* !! a 태그 링크의 클릭 영역을 확장하는 법: display: block; 하면 텍스트 이외의 영역도 클릭영역이 됨 */
+	.sub-menu a { color: #432; padding: 10px; display: block; }
+	.sub-menu a:hover { color: var(--color-btn-bg); }
+	aside p { padding: 12px 10px; }
+	
 
 	/* Footer
 	------------------------ */
 	footer { background: #432; text-align: center; padding: 26px 0; }
 	footer p { color: #fff; font-size: 0/875rem; }
+
+
+
+	/* 모바일 버전
+	------------------------ */
+	@media (max-width: 600px) {
+		h1 { color: var(--color-btn-bg); }
+
+		.page-header { flex-direction: column; align-items: center; }
+		.page-title { font-size: 2.5rem;}
+		
+		/* Header */
+		.main-nav { font-size: 1rem; margin-top: 10px; }
+		.main-nav li { margin: 0 20px; }
+		
+		/* Home */
+		.home-content { margin-top: 20%;}
+
+
+
+		/* News Page
+		------------------- */
+		.news-content { flex-direction: column; }
+		article, aside { width: 100%; }
+
+		#news .page-title { margin-top: 30px; }
+		aside { margin-top: 60px; }
+		.post-info { margin-bottom: 30px; }
+		.post-date { width: 70px; height: 70px; font-size: 1rem; }
+		.post-date span { font-size: 0.875rem; padding-top: 2px; }
+		.post-title { font-size: 1.375rem; }
+		.post-cat { font-size: 0.875rem; margin-top: 10px; }
+		.post-title, .post-cat { margin-left: 80px;}
+
+	}
