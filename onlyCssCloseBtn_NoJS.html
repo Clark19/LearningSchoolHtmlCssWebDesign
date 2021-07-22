@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>javascript없이 CSS로만 '닫기' 버튼 작동시키기</title>
+</head>
+<body>
+  <header>
+    <h1>javascript없이 CSS로만 '닫기' 버튼 작동시키기</h1>
+    <div id='menu-top-container'><button id='menu-btn'>menu</button></div>
+  </header>
+  
+  <section class='main-container'>
+    <!-- <button id='menu-btn'>menu</button> -->
+    <input type="checkbox" name="close-btn" id="close-btn">
+    <nav class='menu-container'>
+      <ul>
+        <li>Menu1</li>
+        <li>Menu2</li>
+      </ul>
+      <label for="close-btn">X</label>      
+    </nav>
+
+    <article class="content-container">
+      <h2>javascript없이 CSS로만 닫기 'X' 버튼 작동시키는거 구현 방법</h2>
+      <p>Content article</p>
+      <p>
+        <h3><xmp><!-- HTML 부분 --></xmp></h3>
+        <xmp>
+        <input id="close-btn" type="checkbox" />
+        <div class="menu-container">
+        <label class="on-off" for="sidebar">X</label>
+        <!-- 원하는 것들 넣을 자리 -->
+        </div>
+        </xmp>
+      </p>
+
+      <p>
+        <h3><xmp><!-- CSS 부분 --></xmp></h3>
+        <xmp>
+          // 체크박스 상자 자체는 보일 필요가 없음.
+          #close-btn { display: none; }
+          ​
+          .menu-container {
+              // 체크되지 않았을 때 CSS
+          }
+          ​
+          //체크박스(레이블 텍스트)가 체크 되었을 때, 형재 엘리먼트 .menu-container를 지정해 스타일 설정
+          #close-btn:checked ~ .menu-container {
+              // 체크되었을 때 스타일
+          }
+        </xmp>
+      </p>
+     
+    </article>
+  </section>
+
+  <style>
+    /* header */
+    header { display: flex; width: 88%;}
+    #menu-top-container { position: relative; width: 12%; }
+    #menu-btn { position: absolute; bottom: 5vh; right: 0;}
+    
+
+    /* main-container */
+    .main-container { position: relative; height: 100vh;}
+    .menu-container { background: green; position: absolute; top: 0; right: 0;
+      height: 100%; width:0%; transition-duration: 1s;
+      display: flex; flex-direction: column;}
+    #close-btn { display: none; }
+    #close-btn:checked ~ .menu-container { width: 100%; }
+    
+    .menu-container { display: flex; }
+    .menu-container > ul { order: 1; }
+    .menu-container > label { border: yellow 1px solid; order: 0; width: 22px;
+      text-align: center; order: 0; margin: 5px 20px 5px; }
+    .content-container { background: lightseagreen; width: 100vw; height: 100vh;}
+    
+  </style>
+
+  <script>
+    const menuBtn = document.querySelector('#menu-btn');
+    menuBtn.onclick = function() {
+      document.querySelector('#close-btn').checked = true;
+      // 아래와 같이 클래스를 추가하거나 css 속성인 width 값을 바꾸면 제대로 작동이 안됨.
+      // document.querySelector('.menu-container').classList.add('menu-container');
+      // document.querySelector('.menu-container').style.width = '92%';
+    }
+  </script>
+
+</body>
+</html>
