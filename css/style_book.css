@@ -135,6 +135,39 @@ body { font-family: "나눔고딕", NanumGothic, "맑은고딕", MalgunGothic, s
 	 .big-box img { height: 94%; width: 100%; 
 			object-fit: cover; /* 이미지를 찌부려 뜨리지 않고, 자동으로 잘리게 하는 속성 값 */ }
 
+	
+	/* Contact page
+	--------------------------- */
+	#contact { background-image: url(../images/contact-bg.jpg);
+		min-height: 100vh;}
+
+	/* 입력 양식 */
+	form div { margin-bottom: 14px; }
+	label { font-size: 1.125rem; margin-bottom: 10px; display: block;}
+	input[type='text'], input[type='email'], textarea {
+		background: rgba(255,255,255,.5); border: 1px #fff solid;
+		border-radius: 5px; padding: 10px; font-size: 1rem; }
+	input[type='text'], input[type='email'] { width: 100%; max-width: 240px;}
+	textarea { width: 100%; max-width: 480px; height: 6rem; }
+	input[type='submit'] { border: none; cursor: pointer; line-height: 1; }
+
+	.googlesurvey { margin: 15px; font-size: 1.5rem; padding-left: 20px;}
+
+  /* 가게 정보와 지도(구글 맵) */
+	#location { padding: 4% 0; }
+	#location .wrapper { display: flex; justify-content: space-between;}
+	.location-info { width: 22%; }
+	.location-info p { padding: 12px 10px; }
+	.location-map { width: 74%; }
+/* iframe - Google Map */
+iframe { width: 100%; }
+
+/* SNS */
+#sns { background: #FAF7F0; padding: 4% 0; }
+#sns .wrapper { display: flex; justify-content: space-between; }
+#sns .sub-title { margin-bottom: 30px;}
+.sns-box { width: 30%; }
+
 
 
 	/* 모바일 버전 : 반응형 웹 적용(@media 쿼리 적용)
@@ -176,5 +209,20 @@ body { font-family: "나눔고딕", NanumGothic, "맑은고딕", MalgunGothic, s
 			grid-row: auto;
 		}
 		.big-box img { height: 100%;}
+
+
+		/* CONTACT PAGE
+		----------------------- */
+		#contact .page-title { margin-top: 40px;}
+
+		/* 입력 양식 */
+		input[type='text'], input[type='email'], textarea {
+			max-width: 100%; }
+
+		/* 외부입력 삽입부분 - 미디어 쿼리로 수직 정렬 */
+		#location .wrapper, #sns .wrapper { flex-direction: column; }
+		.location-info, .location-map, .sns-box { width: 100%; }
+		.sns-box { margin-bottom: 30px; }
+		
 
 	}
