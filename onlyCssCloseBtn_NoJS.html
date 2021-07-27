@@ -31,7 +31,7 @@
         <xmp>
         <input id="close-btn" type="checkbox" />
         <div class="menu-container">
-        <label class="on-off" for="sidebar">X</label>
+        <label class="on-off" for="close-btn">X</label>
         <!-- 원하는 것들 넣을 자리 -->
         </div>
         </xmp>
@@ -68,7 +68,7 @@
     .main-container { position: relative; height: 100vh;}
     .menu-container { background: green; position: absolute; top: 0; right: 0;
       height: 100%; width:0%; transition-duration: 1s;
-      display: flex; flex-direction: column;}
+      display: flex; flex-direction: column; opacity: .95; }
     #close-btn { display: none; }
     #close-btn:checked ~ .menu-container { width: 100%; }
     
