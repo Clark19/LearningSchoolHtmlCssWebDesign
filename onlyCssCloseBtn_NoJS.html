@@ -9,7 +9,15 @@
 <body>
   <header>
     <h1>javascript없이 CSS로만 '닫기' 버튼 작동시키기</h1>
-    <div id='menu-top-container'><button id='menu-btn'>menu</button></div>
+    <!-- <div id='menu-top-container'><button id='menu-btn'>menu</button></div> -->
+    <div id='menu-top-container'>
+      <input type="checkbox" id="menuicon">
+      <label for="menuicon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+    </div>
   </header>
   
   <section class='main-container'>
@@ -63,6 +71,42 @@
     #menu-top-container { position: relative; width: 12%; }
     #menu-btn { position: absolute; bottom: 5vh; right: 0;}
     
+    /* only css hamburger menu icon */
+    input[id="menuicon"] {display: none;}
+    input[id="menuicon"] + label { display: block;
+      width: 60px; height: 40px; position: relative;
+      cursor: pointer; }
+    input[id="menuicon"] + label span {
+      display: block;
+      position: absolute;
+      width: 100%; height: 10px;
+      border-radius: 30px;
+      background: #777;
+      transition: all .35s;
+    }
+    input[id="menuicon"] + label span:nth-child(1) {
+      top:0;
+    }
+    input[id="menuicon"]:checked + label span:nth-child(1) {
+      top:50%; transform:translateY(-50%) rotate(45deg);
+    }
+    input[id="menuicon"] + label span:nth-child(2) {
+      top:50%;
+      transform: translateY(-50%);
+    }
+    input[id="menuicon"]:checked + label span:nth-child(2) {
+      opacity: 0;
+    }
+    input[id="menuicon"] + label span:nth-child(3) {
+      bottom:0;
+    }
+    input[id="menuicon"]:checked + label span:nth-child(3) {
+      bottom:50%; transform:translateY(50%) rotate(-45deg);
+    }
+
+
+    
+
 
     /* main-container */
     .main-container { position: relative; height: 100vh;}
@@ -81,9 +125,12 @@
   </style>
 
   <script>
-    const menuBtn = document.querySelector('#menu-btn');
+    const menuBtn = document.querySelector('#menuicon');
     menuBtn.onclick = function() {
-      document.querySelector('#close-btn').checked = true;
+      if (document.querySelector('#close-btn').checked)
+        document.querySelector('#close-btn').checked = false;
+      else
+        document.querySelector('#close-btn').checked = true;
       // 아래와 같이 클래스를 추가하거나 css 속성인 width 값을 바꾸면 제대로 작동이 안됨.
       // document.querySelector('.menu-container').classList.add('menu-container');
       // document.querySelector('.menu-container').style.width = '92%';
